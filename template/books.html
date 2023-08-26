@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block title %}Books{% endblock title %}
+
+{% block body %}
+
+
+<div class="page-banner bg-image" style="background-image: url(static/img/books.jpg);">
+    <div class="banner-section">
+        <div class="container text-center wow fadeInUp">
+            <h2 class="font-weight-normal">Welcom {{request.user}}, You can download books!!</h2>
+        </div>
+    </div> <!-- .banner-section -->
+</div> <!-- .page-banner -->
+
+
+<div class="page-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-12 wow fadeInUp" id="bbai">
+                <!-- <h3 class="text-center mb-3">2</h3> -->
+                <div class="text-lg ">
+                    <div>
+                        <table class="table table-bordered table-sm ">
+                            <thead>
+                                <tr style="background-color: #70eb8a;">
+                                    <th colspan="3" class="text-center">Course Books of BBA</th>
+                                </tr>
+                                <tr>
+                                    <!-- <th style="width: 14.66%;" class="text-center">S.NO</th> -->
+                                    <th style="width: 60.66%;" class="text-center">Subjects</th>
+                                    <th style="width: 26.66%;" class="text-center"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for post in bba %}
+                                <tr class="">
+                                    <!-- <td class="text-center">{{post}}</td> -->
+                                    <td><a href="{{post.admin_upload.url}}" target="_blank"><h4>{{post.title}}</h4></a></td>
+                                    <td class="text-center"><a href="{{post.admin_upload.url}}" download="{{post.admin_upload.url}}">Download</a></td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-12 wow fadeInUp" id="bsiti">
+                <!-- <h3 class="text-center mb-3">2</h3> -->
+                <div class="text-lg ">
+                    <div>
+                        <table class="table table-bordered table-sm ">
+                            <thead>
+                                <tr style="background-color: #ceacde;">
+                                    <th colspan="3" class="text-center">Course Books of BSIT</th>
+                                </tr>
+                                <tr>
+                                    <!-- <th style="width: 14.66%;" class="text-center">S.NO</th> -->
+                                    <th style="width: 60.66%;" class="text-center">Subjects</th>
+                                    <th style="width: 26.66%;" class="text-center"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for post in bsit %}
+                                <tr class="">
+                                    <!-- <td class="text-center">print(x=x+1)</td> -->
+                                    <td><a href="{{post.admin_upload.url}}" target="_blank"><h4>{{post.title}}</h4></a></td>
+                                    <td class="text-center"><a href="{{post.admin_upload.url}}" download="{{post.admin_upload.url}}">Download</a></td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock body %}

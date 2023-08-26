@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="copyright" content="MACode ID, https://macodeid.com/">
+
+    <title>{% block title %} {% endblock title %}</title>
+
+    <link rel="shortcut icon" type="image/png" href="static/img/favicon.png">
+
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'css/maicons.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+
+    <link rel="stylesheet" href="{% static 'vendor/owl-carousel/css/owl.carousel.css' %}">
+
+    <link rel="stylesheet" href="{% static 'vendor/animate/animate.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/theme.css' %}">
+
+    {% block bootstrap %}{% endblock bootstrap %}
+
+</head>
+
+<body>
+    <div class="page-section">
+        <div class="container">
+            <h1 class="text-center wow fadeInUp">Login</h1>
+
+            <form class="main-form" method="post" action="/login">
+            {% csrf_token %}
+                <div class="row mt-5 ">
+                {% for message in messages %}
+                <div class="col-12 col-sm-12 py-2 wow fadeInLeft">
+                        <h5>{{message}}</h5>
+                    </div>
+                {% endfor %}
+                    {% comment %} <div class="col-12 col-sm-12 py-2 wow fadeInLeft">
+                        <input type="text" class="form-control" placeholder="username" name="username">
+                    </div> {% endcomment %}
+                    <div class="col-12 col-sm-12 py-2 wow fadeInLeft">
+                        <input type="email" class="form-control" placeholder="email" name="email">
+                    </div>
+                    <div class="col-12 col-sm-12 py-2 wow fadeInRight">
+                        <input type="password" class="form-control" placeholder="Password" name="password">
+                    </div>                    
+                </div>
+
+                <div class="col-12 text-center my-4 wow zoomIn">
+                    <button type="submit" class="btn btn-primary mt-3 wow zoomIn">Login</button>
+                </div>
+                <div class="col-12 text-center my-4 wow zoomIn">
+                    <a href="/register" class="">Register Now</a>
+                </div>
+            </form>
+
+        </div> <!-- .container -->
+    </div> <!-- .page-section -->
+
+    
+</body>
+
+</html>

@@ -1,0 +1,532 @@
+{% extends 'base.html' %}
+
+{% block title %}Faculty{% endblock title %}
+
+ <!--({{f.hod}})-->
+
+{% block body %}
+<style>
+  .nav-link-custom{
+    display: block;
+    padding: 0.2rem 1rem;
+  }
+  h4,h1{
+    color: #1c6547;
+  }
+</style>
+<div class="page-banner overlay-dark bg-image" style="background-image: url(static/img/bg_image_1.jpg);">
+  <div class="banner-section">
+    <div class="container text-center wow fadeInUp">
+      <!-- <nav aria-label="Breadcrumb">
+        <ol class="breadcrumb breadcrumb-dark bg-transparent justify-content-center py-0 mb-2">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Doctors</li>
+        </ol>
+      </nav> -->
+      <h2 class="font-weight-normal">Faculty</h2>
+    </div> <!-- .container -->
+  </div> <!-- .banner-section -->
+</div> <!-- .page-banner -->
+
+<div class="container">
+  <div class="row py-3">
+    <div class="col-3 order-2 bg-light" id="sticky-sidebar">
+      <div class="sticky-top">
+        <div class="nav flex-column pt-3">
+          <h4>Departments</h4>
+          <a href="#bba" class="nav-link-custom">BBA</a>             <!--class nav-link removed-->
+          <a href="#botany" class="nav-link-custom">Botany</a>
+          <a href="#bsit" class="nav-link-custom">BSIT</a>
+          <a href="#commerce" class="nav-link-custom">Commerce</a>
+          <a href="#chemistry" class="nav-link-custom">Chemistry</a>
+          <a href="#economics" class="nav-link-custom">Economics</a>
+          <a href="#english" class="nav-link-custom">English</a>
+          <a href="#home_economics" class="nav-link-custom">Home Economics</a>
+          <a href="#islamiat" class="nav-link-custom">Islamiat</a>
+          <a href="#mathematics" class="nav-link-custom">Mathematics</a>
+          <a href="#pakistan_studies" class="nav-link-custom">Pakistan Studies</a>
+          <a href="#physical_education" class="nav-link-custom">Physical Education</a>
+          <a href="#physics" class="nav-link-custom">Physics</a>
+          <a href="#sindhi" class="nav-link-custom">Sindhi</a>
+          <a href="#urdu" class="nav-link">Urdu</a>
+          <a href="#zoology" class="nav-link-custom">Zoology</a>
+        </div>
+      </div>
+    </div>
+    <div class="col" id="main">
+      <!-- BBA -->
+      <div class="page-section bg-light">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+              <div class="row">
+                <h1 class="container text-center wow fadeInUp" id="bba">BBA</h1>
+                {% for f in bba %}
+                <div class="col-md-6 col-lg-4 py-3 wow zoomIn">
+                  <div class="card-doctor">
+                    <div class="header">
+                      <img src="/media/{{f.picture}}" class="responsive-img post-thumb" alt="">
+                    </div>
+                    <div class="body">
+                      <p class="text-xl mb-0">{{f.name}}</p>
+                      <span class="text-sm text-grey">{{f.designation}}</span><br>
+                      <span class="text-sm text-grey">Experience: {{f.Experience}}</span>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+
+              </div>
+            </div>
+          </div>
+        </div> <!-- .container -->
+      </div> <!-- .page-section -->
+      <!-- End BBA -->
+
+      <!-- Botany -->
+      <div class="page-section bg-light">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+              <div class="row">
+                <h1 class="container text-center wow fadeInUp" id="botany">Botany</h1>
+                {% for f in botany %}
+                <div class="col-md-6 col-lg-4 py-3 wow zoomIn">
+                  <div class="card-doctor">
+                    <div class="header">
+                      <img src="/media/{{f.picture}}" class="responsive-img post-thumb" alt="">
+                    </div>
+                    <div class="body">
+                      <p class="text-xl mb-0">{{f.name}}</p>
+                      <span class="text-sm text-grey">{{f.designation}}</span><br>
+                      <span class="text-sm text-grey">Experience: {{f.Experience}}</span>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+
+              </div>
+            </div>
+          </div>
+        </div> <!-- .container -->
+      </div> <!-- .page-section -->
+      <!-- End Botany -->
+
+      <!-- BSIT -->
+      <div class="page-section bg-light">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+              <div class="row">
+                <h1 class="container text-center wow fadeInUp" id="bsit">BSIT</h1>
+                {% for f in bsit %}
+                <div class="col-md-6 col-lg-4 py-3 wow zoomIn">
+                  <div class="card-doctor">
+                    <div class="header">
+                      <img src="/media/{{f.picture}}" class="responsive-img post-thumb" alt="">
+                    </div>
+                    <div class="body">
+                      <p class="text-xl mb-0">{{f.name}}</p>
+                      <span class="text-sm text-grey">{{f.designation}}</span><br>
+                      <span class="text-sm text-grey">Experience: {{f.Experience}}</span>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+
+              </div>
+            </div>
+          </div>
+        </div> <!-- .container -->
+      </div> <!-- .page-section -->
+      <!-- End BSIT -->
+
+      <!-- Commerce -->
+      <div class="page-section bg-light">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+              <div class="row">
+                <h1 class="container text-center wow fadeInUp" id="commerce">Commerce</h1>
+                {% for f in commerce %}
+                <div class="col-md-6 col-lg-4 py-3 wow zoomIn">
+                  <div class="card-doctor">
+                    <div class="header">
+                      <img src="/media/{{f.picture}}" class="responsive-img post-thumb" alt="">
+                    </div>
+                    <div class="body">
+                      <p class="text-xl mb-0">{{f.name}}</p> 
+                      <span class="text-sm text-grey">{{f.designation}}</span><br>
+                      <span class="text-sm text-grey">Experience: {{f.Experience}}</span>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+
+              </div>
+            </div>
+          </div>
+        </div> <!-- .container -->
+      </div> <!-- .page-section -->
+      <!-- End Commerce -->
+
+      <!-- Chemistry -->
+      <div class="page-section bg-light">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+              <div class="row">
+                <h1 class="container text-center wow fadeInUp" id="chemistry">Chemistry</h1>
+                {% for f in chemistry %}
+                <div class="col-md-6 col-lg-4 py-3 wow zoomIn">
+                  <div class="card-doctor">
+                    <div class="header">
+                      <img src="/media/{{f.picture}}" class="responsive-img post-thumb" alt="">
+                    </div>
+                    <div class="body">
+                      <p class="text-xl mb-0">{{f.name}}</p>
+                      <span class="text-sm text-grey">{{f.designation}}</span><br>
+                      <span class="text-sm text-grey">Experience: {{f.Experience}}</span>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+
+              </div>
+            </div>
+          </div>
+        </div> <!-- .container -->
+      </div> <!-- .page-section -->
+      <!-- End Chemistry -->
+
+      <!-- Economics -->
+      <div class="page-section bg-light">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+              <div class="row">
+                <h1 class="container text-center wow fadeInUp" id="economics">Economics</h1>
+                {% for f in economics %}
+                <div class="col-md-6 col-lg-4 py-3 wow zoomIn">
+                  <div class="card-doctor">
+                    <div class="header">
+                      <img src="/media/{{f.picture}}" class="responsive-img post-thumb" alt="">
+                    </div>
+                    <div class="body">
+                      <p class="text-xl mb-0">{{f.name}}</p>
+                      <span class="text-sm text-grey">{{f.designation}}</span><br>
+                      <span class="text-sm text-grey">Experience: {{f.Experience}}</span>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+
+              </div>
+            </div>
+          </div>
+        </div> <!-- .container -->
+      </div> <!-- .page-section -->
+      <!-- End Economics -->
+
+      <!-- English -->
+      <div class="page-section bg-light">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+              <div class="row">
+                <h1 class="container text-center wow fadeInUp" id="english">English</h1>
+                {% for f in english %}
+                <div class="col-md-6 col-lg-4 py-3 wow zoomIn">
+                  <div class="card-doctor">
+                    <div class="header">
+                      <img src="/media/{{f.picture}}" class="responsive-img post-thumb" alt="">
+                    </div>
+                    <div class="body">
+                      <p class="text-xl mb-0">{{f.name}}</p>
+                      <span class="text-sm text-grey">{{f.designation}}</span><br>
+                      <span class="text-sm text-grey">Experience: {{f.Experience}}</span>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+
+              </div>
+            </div>
+          </div>
+        </div> <!-- .container -->
+      </div> <!-- .page-section -->
+      <!-- End English -->
+
+      <!-- Home Economics -->
+      <div class="page-section bg-light">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+              <div class="row">
+                <h1 class="container text-center wow fadeInUp" id="home_economics">Home Economics</h1>
+                {% for f in home_economics %}
+                <div class="col-md-6 col-lg-4 py-3 wow zoomIn">
+                  <div class="card-doctor">
+                    <div class="header">
+                      <img src="/media/{{f.picture}}" class="responsive-img post-thumb" alt="">
+                    </div>
+                    <div class="body">
+                      <p class="text-xl mb-0">{{f.name}}</p>
+                      <span class="text-sm text-grey">{{f.designation}}</span><br>
+                      <span class="text-sm text-grey">Experience: {{f.Experience}}</span>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+
+              </div>
+            </div>
+          </div>
+        </div> <!-- .container -->
+      </div> <!-- .page-section -->
+      <!-- End Home Economics -->
+
+
+      <!-- Islamiat -->
+      <div class="page-section bg-light">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+              <div class="row">
+                <h1 class="container text-center wow fadeInUp" id="islamiat">Islamiat</h1>
+                {% for f in islamiat %}
+                <div class="col-md-6 col-lg-4 py-3 wow zoomIn">
+                  <div class="card-doctor">
+                    <div class="header">
+                      <img src="/media/{{f.picture}}" class="responsive-img post-thumb" alt="">
+                    </div>
+                    <div class="body">
+                      <p class="text-xl mb-0">{{f.name}}</p>
+                      <span class="text-sm text-grey">{{f.designation}}</span><br>
+                      <span class="text-sm text-grey">Experience: {{f.Experience}}</span>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+
+              </div>
+            </div>
+          </div>
+        </div> <!-- .container -->
+      </div> <!-- .page-section -->
+      <!-- End Islamiat -->
+
+      <!-- Mathematics -->
+      <div class="page-section bg-light">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+              <div class="row">
+                <h1 class="container text-center wow fadeInUp" id="mathematics">Mathematics</h1>
+                {% for f in mathematics %}
+                <div class="col-md-6 col-lg-4 py-3 wow zoomIn">
+                  <div class="card-doctor">
+                    <div class="header">
+                      <img src="/media/{{f.picture}}" class="responsive-img post-thumb" alt="">
+                    </div>
+                    <div class="body">
+                      <p class="text-xl mb-0">{{f.name}}</p>
+                      <span class="text-sm text-grey">{{f.designation}}</span><br>
+                      <span class="text-sm text-grey">Experience: {{f.Experience}}</span>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+
+              </div>
+            </div>
+          </div>
+        </div> <!-- .container -->
+      </div> <!-- .page-section -->
+      <!-- End Mathematics -->
+
+      <!-- Pakistan Studies -->
+      <div class="page-section bg-light">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+              <div class="row">
+                <h1 class="container text-center wow fadeInUp" id="pakistan_studies">Pakistan Studies</h1>
+                {% for f in pakistan_studies %}
+                <div class="col-md-6 col-lg-4 py-3 wow zoomIn">
+                  <div class="card-doctor">
+                    <div class="header">
+                      <img src="/media/{{f.picture}}" class="responsive-img post-thumb" alt="">
+                    </div>
+                    <div class="body">
+                      <p class="text-xl mb-0">{{f.name}}</p>
+                      <span class="text-sm text-grey">{{f.designation}}</span><br>
+                      <span class="text-sm text-grey">Experience: {{f.Experience}}</span>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+
+              </div>
+            </div>
+          </div>
+        </div> <!-- .container -->
+      </div> <!-- .page-section -->
+      <!-- End Pakistan Studies -->
+
+      <!-- Physical Education -->
+      <div class="page-section bg-light">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+              <div class="row">
+                <h1 class="container text-center wow fadeInUp" id="physical_education">Physical Education</h1>
+                {% for f in physical_education %}
+                <div class="col-md-6 col-lg-4 py-3 wow zoomIn">
+                  <div class="card-doctor">
+                    <div class="header">
+                      <img src="/media/{{f.picture}}" class="responsive-img post-thumb" alt="">
+                    </div>
+                    <div class="body">
+                      <p class="text-xl mb-0">{{f.name}}</p>
+                      <span class="text-sm text-grey">{{f.designation}}</span><br>
+                      <span class="text-sm text-grey">Experience: {{f.Experience}}</span>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+
+              </div>
+            </div>
+          </div>
+        </div> <!-- .container -->
+      </div> <!-- .page-section -->
+      <!-- End Physical Education -->
+
+      <!-- Physics -->
+      <div class="page-section bg-light">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+              <div class="row">
+                <h1 class="container text-center wow fadeInUp" id="physics">Physics</h1>
+                {% for f in physics %}
+                <div class="col-md-6 col-lg-4 py-3 wow zoomIn">
+                  <div class="card-doctor">
+                    <div class="header">
+                      <img src="/media/{{f.picture}}" class="responsive-img post-thumb" alt="">
+                    </div>
+                    <div class="body">
+                      <p class="text-xl mb-0">{{f.name}}</p>
+                      <span class="text-sm text-grey">{{f.designation}}</span><br>
+                      <span class="text-sm text-grey">Experience: {{f.Experience}}</span>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+
+              </div>
+            </div>
+          </div>
+        </div> <!-- .container -->
+      </div> <!-- .page-section -->
+      <!-- End Physics -->
+
+      <!-- Sindhi -->
+      <div class="page-section bg-light">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+              <div class="row">
+                <h1 class="container text-center wow fadeInUp" id="sindhi">Sindhi</h1>
+                {% for f in sindhi %}
+                <div class="col-md-6 col-lg-4 py-3 wow zoomIn">
+                  <div class="card-doctor">
+                    <div class="header">
+                      <img src="/media/{{f.picture}}" class="responsive-img post-thumb" alt="">
+                    </div>
+                    <div class="body">
+                      <p class="text-xl mb-0">{{f.name}}</p>
+                      <span class="text-sm text-grey">{{f.designation}}</span><br>
+                      <span class="text-sm text-grey">Experience: {{f.Experience}}</span>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+
+              </div>
+            </div>
+          </div>
+        </div> <!-- .container -->
+      </div> <!-- .page-section -->
+      <!-- End Sindhi -->
+
+      <!-- Urdu -->
+      <div class="page-section bg-light">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+              <div class="row">
+                <h1 class="container text-center wow fadeInUp" id="urdu">Urdu</h1>
+                {% for f in urdu %}
+                <div class="col-md-6 col-lg-4 py-3 wow zoomIn">
+                  <div class="card-doctor">
+                    <div class="header">
+                      <img src="/media/{{f.picture}}" class="responsive-img post-thumb" alt="">
+                    </div>
+                    <div class="body">
+                      <p class="text-xl mb-0">{{f.name}}</p>
+                      <span class="text-sm text-grey">{{f.designation}}</span><br>
+                      <span class="text-sm text-grey">Experience: {{f.Experience}}</span>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+
+              </div>
+            </div>
+          </div>
+        </div> <!-- .container -->
+      </div> <!-- .page-section -->
+      <!-- End Urdu -->
+
+      <!-- Zoology -->
+      <div class="page-section bg-light">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+              <div class="row">
+                <h1 class="container text-center wow fadeInUp" id="zoology">Zoology</h1>
+                {% for f in zoology %}
+                <div class="col-md-6 col-lg-4 py-3 wow zoomIn">
+                  <div class="card-doctor">
+                    <div class="header">
+                      <img src="/media/{{f.picture}}" class="responsive-img post-thumb" alt="">
+                    </div>
+                    <div class="body">
+                      <p class="text-xl mb-0">{{f.name}}</p>
+                      <span class="text-sm text-grey">{{f.designation}}</span><br>
+                      <span class="text-sm text-grey">Experience: {{f.Experience}}</span>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+
+              </div>
+            </div>
+          </div>
+        </div> <!-- .container -->
+      </div> <!-- .page-section -->
+      <!-- End Zoology -->
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+{% endblock body %}

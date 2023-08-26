@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% load static %}
+
+{% block title %}Apply Online{% endblock title %}
+
+{% block bootstrap %}
+
+{% endblock bootstrap %}
+
+
+
+{% block script %}
+<script>
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+
+      reader.onload = function (e) {
+        $('#blah')
+          .attr('src', e.target.result)
+          .width(150)
+          .height(200);
+      };
+
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+</script>
+
+{% endblock script %}
+
+
+{% block body %}
+
+<div class="page-banner overlay-dark bg-image" style="background-image: url(static/img/bg_image_1.jpg);">
+  <div class="banner-section">
+    <div class="container text-center wow fadeInUp">
+      <h1 class="font-weight-normal">First Year Admission</h1>
+    </div> <!-- .container -->
+  </div> <!-- .banner-section -->
+</div> <!-- .page-banner -->
+<div class="page-section">
+  <div class="container">
+    <h1 class="text-center wow fadeInUp">Admission Form</h1>
+    <h5 class="text-center wow fadeInUp">Enter your admission information below</h5>
+    {% for message in messages %}
+    {{message}}
+    {% endfor %}
+
+    <form action="/admission" method="post" enctype='multipart/form-data'>
+      {% csrf_token %}
+      {{ form|crispy }}
+      <!-- <div class="row mb-3">
+        <div class="col-3 py-2">{{ form.picture| as_crispy_field}}</div>
+        <div class="col-12 py-2">{{ form.name | as_crispy_field }}</div>
+        <div class="col-12 py-2">{{ form.father_name | as_crispy_field}}</div>
+        <div class="col-6 py-2">{{ form.caste | as_crispy_field }}</div>
+        <div class="col-6 py-2">{{ form.religion | as_crispy_field}}</div>
+        <div class="col-6 py-2">{{ form.nationality | as_crispy_field}}</div>
+        <div class="col-6 py-2">{{ form.marital_status | as_crispy_field}}</div>
+        <div class="col-6 py-2">{{ form.DOB | as_crispy_field}}</div>
+        <div class="col-6 py-2">{{ form.email | as_crispy_field}}</div>
+        <div class="col-12 py-2">{{ form.permanent_address | as_crispy_field}}</div>
+        <div class="col-4 py-2">{{ form.district | as_crispy_field}}</div>
+        <div class="col-4 py-2">{{ form.talukka | as_crispy_field}}</div>
+        <div class="col-4 py-2">{{ form.postal_address | as_crispy_field}}</div>
+        <div class="col-6 py-2">{{ form.contact_number | as_crispy_field}}</div>
+        <div class="col-6 py-2">{{ form.guardian_cnumber | as_crispy_field}}</div>
+        <div class="col-9 py-2">{{ form.guardian_profession | as_crispy_field}}</div>
+        <div class="col-3 py-2">{{ form.family_members | as_crispy_field}}</div>
+        <div class="col-4 py-2">{{ form.Guardian_mlyincome | as_crispy_field}}</div>
+        <div class="col-4 py-2">{{ form.native_place | as_crispy_field}}</div>
+        <div class="col-4 py-2">{{ form.cnic_no | as_crispy_field}}</div>
+        <div class="col-4 py-2">{{ form.cnic_img | as_crispy_field}}</div>
+        <div class="col-4 py-2">{{ form.vaccination_img | as_crispy_field}}</div>
+        <div class="col-4 py-2 ">{{ form.slip_img | as_crispy_field}}</div>
+        <div>
+          <table class="table table-bordered table-sm ">
+            <thead>
+              <tr class="table-success">
+                <th scope="col">Examination Passed</th>
+                <th scope="col">Total Marks</th>
+                <th scope="col">Obtained Marks</th>
+                <th scope="col">Grade</th>
+                <th scope="col">Passing Year</th>
+                <th scope="col">Seat No.</th>
+                <th scope="col">Annual/Supply</th>
+                <th scope="col">Board/University</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="">
+                <th scope="row" class="table-success">SSC P-II</th>
+                <td><input type="text" id="native_place" class="form-control" name="ssc_max_marks" placeholder=""></td>
+                <td><input type="text" id="native_place" class="form-control" name="ssc_obt_marks" placeholder=""></td>
+                <td><input type="text" id="native_place" class="form-control" name="ssc_grade" placeholder=""></td>
+                <td><input type="text" id="native_place" class="form-control" name="ssc_passing_year" placeholder=""></td>
+                <td><input type="text" id="native_place" class="form-control" name="ssc_seat_number" placeholder=""></td>
+                <td><input type="text" id="native_place" class="form-control" name="ssc_status" placeholder=""></td>
+                <td><input type="text" id="native_place" class="form-control" name="ssc_board" placeholder=""></td>
+              </tr>
+              <tr class="">
+                <th scope="row" class="table-success">HSC P-I</th>
+                <td><input type="text" id="native_place" class="form-control" name="hsc1_max_marks" placeholder=""></td>
+                <td><input type="text" id="native_place" class="form-control" name="hsc1_obt_marks" placeholder=""></td>
+                <td><input type="text" id="native_place" class="form-control" name="hsc1_grade" placeholder=""></td>
+                <td><input type="text" id="native_place" class="form-control" name="hsc1_passing_year" placeholder=""></td>
+                <td><input type="text" id="native_place" class="form-control" name="hsc1_seat_number" placeholder=""></td>
+                <td><input type="text" id="native_place" class="form-control" name="hsc1_status" placeholder=""></td>
+                <td><input type="text" id="native_place" class="form-control" name="hsc1_board" placeholder=""></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div> -->
+      <input type='submit' value='submit' class="btn btn-primary wow zoomIn">
+    </form>
+  </div>
+</div>
+
+{% endblock body %}
